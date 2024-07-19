@@ -1,0 +1,82 @@
+@page
+@model FormModel
+@using AdvBootstrap.Models
+
+<h4 class="mb-3">Sign up for the ThoughtTronix Community Forums</h4>
+<form method="post" asp-page="Success">
+    <div class="row mb-3">
+        <div class="col-6">
+            <div class="form-floating">
+                <input asp-for="NewAccount.FirstName" class="form-control" placeholder="First Name">
+                <label asp-for="NewAccount.FirstName" class="form-label"></label>
+            </div>
+            <span asp-validation-for="NewAccount.FirstName" class="text-danger"></span>
+        </div>
+        <div class="col-6">
+            <label asp-for="NewAccount.LastName" class="form-label"></label>
+            <input asp-for="NewAccount.LastName" class="form-control">
+            <span asp-validation-for="NewAccount.LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6">
+            <label asp-for="NewAccount.Password" class="form-label"></label>
+            <input asp-for="NewAccount.Password" type="password" class="form-control">
+            <span asp-validation-for="NewAccount.Password" class="text-danger"></span>
+        </div>
+        <div class="col-6">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12">
+            <label asp-for="NewAccount.Email" class="form-label"></label>
+            <input asp-for="NewAccount.Email" class="form-control">
+            <span asp-validation-for="NewAccount.Email" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row mb-3">
+        <div class="col-3">
+            <label class="form-label">How did you hear about ThoughtTronix?</label>
+            <select asp-for="NewAccount.Heard" asp-items="Html.GetEnumSelectList<HearOptions>()" class="form-select">
+                <option value="">Choose...</option>
+            </select>
+            <span asp-validation-for="NewAccount.Heard" class="text-danger"></span>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-3">
+            <div class="form-check">
+                <input asp-for="NewAccount.SubscribeToNewsletter" class="form-check-input" type="checkbox">
+                <label asp-for="NewAccount.SubscribeToNewsletter" class="form-check-label"></label>
+            </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <p>Are you over 18?</p>
+    <div class="row">
+        <div class="col-1">
+            <div class="form-check">
+                <input asp-for="NewAccount.Over18" class="form-check-input" type="radio" value="true">
+                <label class="form-check-label">Yes</label>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="form-check">
+                <input asp-for="NewAccount.Over18" class="form-check-input" type="radio" value="false">
+                <label class="form-check-label">No</label>
+            </div>
+        </div>
+    </div>
+    <span asp-validation-for="NewAccount.Over18" class="text-danger"></span>
+    <hr class="my-4">
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- Add JS code for Data Validation -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

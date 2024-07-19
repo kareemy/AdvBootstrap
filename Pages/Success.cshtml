@@ -1,0 +1,48 @@
+@page
+@model SuccessModel
+
+<h1>Successful Account Creation</h1>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.FirstName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.FirstName)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.LastName)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.LastName)
+    </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.Password)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.Password)
+    </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.Email)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.Email)
+    </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.Heard)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.Heard)
+    </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.SubscribeToNewsletter)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.SubscribeToNewsletter)
+    </dd>
+        <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.NewAccount.Over18)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.NewAccount.Over18)
+    </dd>
+</dl>
